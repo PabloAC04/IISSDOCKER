@@ -1,0 +1,21 @@
+version: '3'
+services:
+  drupal:
+    image: drupal:latest
+    ports:
+      - "81:80" #mapea el puesto 81 del host al 80 del contenedor. (localhost:81)
+    volumes:
+      - drupaldata:/var/www/html #es la carpeta que usa por defecto drupal
+    depends_on:
+      - mysql #mysql se inicia antes que drupal para evitar fallos de sincronización
+  mysql:
+    image: mysql:latest
+    environment: #variables de entorno que configuran la base para el uso
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+    volumes:
+      - mysqldata:/var/lib/mysql #es la carpeta que usa por defecto mysql
+volumes:
+  drupaldata:
+  mysqldata:

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  wordpress:
+    image: wordpress
+    ports:
+      - "82:80" #mapea el puesto 82 del host al 80 del contenedor. (localhost:82)
+    environment: #variables de entorno que configuran la base de datos
+      WORDPRESS_DB_HOST: mariadb:3306 #señala a la base de datos
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    depends_on:
+      - mariadb
+    networks: #red compartida por ambos contenedores 
+      - redDocker
+  mariadb:
+    image: mariadb
+    environment: #variables de estado de la base de datos
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+    networks:
+      - redDocker
+
+networks:
+  redDocker:
