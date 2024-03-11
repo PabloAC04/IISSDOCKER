@@ -52,8 +52,8 @@ volumes:
 
 ## Sección 5: Manual de uso
 
-1. `git clone https://github.com/PabloAC04/IISSDOCKER.git`: clonamos el repositorio en >
-2. `cd IISSDOCKER/Parte1/`: nos movemos a la carpeta donde se encuentra nuestro `docker>
+1. `git clone https://github.com/PabloAC04/IISSDOCKER.git`: clonamos el repositorio en nuestra máquina para usarlo.
+2. `cd IISSDOCKER/Parte1/`: nos movemos a la carpeta donde se encuentra nuestro `docker-compose.yml`.
 3. `docker compose up -d`: ejecutamos el docker-compose en background.
 4. En nuestro navegador vamos la dirección localhost:81 y accederemos a drupal.
 5. Por último para terminar la ejecución, `docker compose down`.
