@@ -11,6 +11,7 @@ services:
   mysql:
     image: mysql:latest
     environment: #variables de entorno que configuran la base para el uso
+      MYSQL_ROOT_PASSWORD: drupal
       MYSQL_DATABASE: drupal
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
