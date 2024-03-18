@@ -23,6 +23,7 @@ services:
   mysql:
     image: mysql:latest
     environment:
+      MYSQL_ROOT_PASSWORD: drupal
       MYSQL_DATABASE: drupal
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
@@ -83,6 +84,7 @@ services:
   mariadb:
     image: mariadb
     environment:
+      MARIADB_ROOT_PASSWORD: wordpress
       MARIADB_DATABASE: wordpress
       MARIADB_USER: wordpress
       MARIADB_PASSWORD: wordpress
